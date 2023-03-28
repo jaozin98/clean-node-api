@@ -1,27 +1,36 @@
+/* eslint-disable max-classes-per-file */
 import { SignUpController } from "./signup"
-import { MissingParamError } from '../errors/missing-param-error'
-import { InvalidParamError } from '../errors/invalid-param-error'
-import { EmailValidator } from '../protocols/email-validator'
+import { MissingParamError, InvalidParamError, ServerError } from '../errors'
+import { EmailValidator } from '../protocols'
 
 interface SutTypes{
   sut: SignUpController
   emailValidatorStub: EmailValidator
 }
-
-const makeSut = (): SutTypes =>{
+const makeEmailValidator = (): EmailValidator =>{
   class EmailValidatorStub implements EmailValidator{
     isValid (_email: string): boolean {
       return true
     }
   }
-  const emailValidatorStub = new EmailValidatorStub
+ return new EmailValidatorStub()
+}
+const makeEmailValidatorwithError = (): EmailValidator =>{
+  class EmailValidatorStub implements EmailValidator{
+    isValid (_email: string): boolean {
+     throw new Error()
+    }
+  }
+ return new EmailValidatorStub()
+}
+const makeSut = (): SutTypes =>{
+  const emailValidatorStub = makeEmailValidator()
   const sut = new SignUpController(emailValidatorStub)
   return {
     sut,
     emailValidatorStub
   }
 }
-
 describe('SignUp Controller', () => {
   test('Shold return 400 if no nome is provided', () => {
     const { sut } = makeSut()
@@ -64,6 +73,7 @@ describe('SignUp Controller', () => {
       expect(httpResponse.statusCode).toBe(400)
       expect(httpResponse.body).toEqual(new MissingParamError('passwordConfirmation'))
   })
+
   test('Shold return 400 if an ivalid email is provided', () => {
     const { sut, emailValidatorStub } = makeSut()
     jest.spyOn(emailValidatorStub, 'isValid').mockReturnValueOnce(false)
@@ -78,7 +88,8 @@ describe('SignUp Controller', () => {
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new InvalidParamError('email'))
-})
+  })
+
 test('Shold call EmailValidator with correct email', () => {
   const { sut, emailValidatorStub } = makeSut()
   const isValidSpy = jest.spyOn(emailValidatorStub, 'isValid')
@@ -93,4 +104,21 @@ test('Shold call EmailValidator with correct email', () => {
   sut.handle(httpRequest)
   expect(isValidSpy).toHaveBeenCalledWith('any_email@mail.com')
 })
+
+test('Should return 500 if an invalid email is provided', () => {
+  const emailValidatorStub = makeEmailValidatorwithError()
+  const sut = new SignUpController(emailValidatorStub)
+  const httpRequest = {
+    body: {
+      name: 'any_name',
+      email: 'invalid_email@mail.com',
+      password: 'any_password',
+      passwordConfirmation: 'any'
+    }
+  }
+  const httpResponse = sut.handle(httpRequest)
+  expect (httpResponse.statusCode).toBe(500)
+  expect (httpResponse.body).toEqual(new ServerError())
+})
+
 })
