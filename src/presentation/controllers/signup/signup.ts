@@ -14,7 +14,7 @@ export class SignUpController implements Controller {
     this.addAccount = addAccount
   }
 
-  // eslint-disable-next-line consistent-return
+
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
 
