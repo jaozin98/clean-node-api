@@ -5,7 +5,7 @@ export default {
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   testEnvironment: 'node',
-  transform: {
+  preset: '@shelf/jest-mongodb',
     '.+\\.ts$': 'ts-jest'
   }
-}
+
