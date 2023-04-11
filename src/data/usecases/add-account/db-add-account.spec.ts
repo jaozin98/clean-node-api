@@ -7,7 +7,7 @@ import { AccountModel,  AddAccountModel, Encrypter, AddAccountRepository } from 
 const makeEncrypter = (): Encrypter => {
   class EncrypterStub implements Encrypter {
     async encrypt(_value: string): Promise<string> {
-       return new Promise(resolve => {resolve('hashed_password')})
+       return new Promise(resolve => resolve('hashed_password'))
     }
    }
    return new EncrypterStub()
@@ -22,7 +22,7 @@ const makeAddAccountRepository = (): AddAccountRepository => {
           password: 'hashed_password'
         }
 
-        return new Promise(resolve => {resolve(fakeAccount)})
+        return new Promise(resolve => resolve(fakeAccount))
       }
     }
     return new AddAccountRepositoryStub()

@@ -1,9 +1,9 @@
-import * as bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt'
 import { BcryptAdapter } from './bcrypt-adapter'
 
-jest. mock('brypt', () => ({
+jest.mock('bcrypt', () => ({
   async hash (): Promise<string>{
-    return new Promise (resolve => {resolve('hash')})
+    return new Promise (resolve => resolve('hash'))
   }
 }))
 
@@ -13,7 +13,6 @@ const makeSut = ():BcryptAdapter => new BcryptAdapter(salt)
 
 describe ('Bcrypt Adapter', () =>{
   test('Shold call bcrypt with correct value', async () => {
-
     const sut = makeSut()
     const hashSpy = jest.spyOn(bcrypt, 'hash')
     await sut.encrypt('any_value')
@@ -28,8 +27,8 @@ describe ('Bcrypt Adapter', () =>{
 
   test('Shold throw if bcrypt throw', async () => {
     const sut = makeSut()
-    jest.spyOn(bcrypt, 'hash').mockReturnValueOnce(new Promise((_resolve, reject) => {reject(new Error())}))
-    const promise =  sut.encrypt('any_value')
+    jest.spyOn(bcrypt, 'hash').mockImplementationOnce(() => {throw new Error()})
+    const promise = sut.encrypt('any_value')
     await expect(promise).rejects.toThrow()
   })
 })
