@@ -48,6 +48,7 @@ const makeSut = (): SutTypes => {
 }
 
 describe('LogController Decorator',() => {
+  // Deve chamar o identificador do controlador
   test('Should call controller handle', async() => {
     const { sut, controllerStub } = makeSut()
     const handleSpy = jest.spyOn(controllerStub, 'handle')
@@ -62,7 +63,7 @@ describe('LogController Decorator',() => {
     await sut.handle(httpRequest)
     expect(handleSpy).toHaveBeenCalledWith(httpRequest)
      })
-
+     // Deve retornar o mesmo resultado do controlador
     test('Should return the same result of the controller', async () => {
         const { sut } = makeSut();
       const httpRequest = {
@@ -81,7 +82,7 @@ describe('LogController Decorator',() => {
         }
       })
      })
-
+    // Deve chamar LogErrorRepository com erro correto se o controlador retornar um erro de servidor
     test('Should call LogErrorRepository with correct error if controller returns a server error', async() => {
       const { sut, controllerStub, logErrorRepositoryStub } = makeSut()
       const fakeError = new Error()
