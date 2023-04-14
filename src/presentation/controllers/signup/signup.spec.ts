@@ -98,7 +98,6 @@ describe('SignUp Controller', () => {
 
   })
 
-
   test('Should return 400 if no password confirmation is provided', async() => {
       const { sut } = makeSut()
       const httpRequest = {
@@ -151,6 +150,7 @@ describe('SignUp Controller', () => {
     expect(httpResponse).toEqual(serverError(new ServerError(null)))
 
   })
+
   test('Should return 500 if AddAccount throws', async() => {
     const { sut, addAccountStub } = makeSut()
     jest.spyOn(addAccountStub, 'add').mockImplementationOnce(() =>{
@@ -177,7 +177,7 @@ describe('SignUp Controller', () => {
       const httpResponse = await sut.handle(makeFakeRequest())
       expect(httpResponse).toEqual(ok(makeFakeAccount()))
 
-    })
-  })
+ })
+})
 
 

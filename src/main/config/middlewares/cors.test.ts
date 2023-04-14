@@ -1,9 +1,11 @@
+ // CORS impede que um site mal-intencionado acesse recursos de outro site sem permissão.
 import request from 'supertest'
 import app from '../app'
 
 describe('CORS Middleware', () => {
+  // Deve habilitar o CORS
   test ('Should enable CORS', async () => {
-   app.get('/test_cors',(req, res) => {
+   app.get('/test_cors',(_req, res) => {
     res.send()
    })
    await request(app)

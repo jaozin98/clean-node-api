@@ -16,15 +16,15 @@ describe('SignUp Routes', () => {
     const accountCollection = await MongoHelper.getCollection('accounts')
     await accountCollection.deleteMany({})
    })
-
+    // Deve retornar uma conta com sucesso
   test ('Should return an account on success', async () => {
    await request(app)
    .post('/api/signup')
    .send({
       name:'Joao',
       email:'joao.dev@email.com',
-      password:'1234',
-      passwordConfirmation:'1234'
+      password:'123',
+      passwordConfirmation:'123'
    })
    .expect(200)
   })

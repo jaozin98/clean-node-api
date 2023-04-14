@@ -8,7 +8,7 @@ describe('MongoHelper', () => {
   afterAll(async () => {
     await sut.disconnect();
   });
-
+        // Deve reconectar ao MongoDB se o cliente estiver inativo
   test('Should reconnect to MongoDB if client is down', async () => {
     let accountCollection = await sut.getCollection('accounts');
     expect(accountCollection).toBeTruthy();

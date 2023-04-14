@@ -12,7 +12,7 @@ export const MongoHelper = {
     await this.client.close();
     this.client = null;
   },
-
+ // usada para ter acesso a documentos armazenados no banco
   async getCollection(name: string): Promise<Collection> {
     if (!this.client?.topology) {
       await this.connect(this.uri);
