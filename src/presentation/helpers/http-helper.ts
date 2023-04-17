@@ -13,7 +13,7 @@ export const serverError = (error: Error): HttpResponse => ({
   body: new ServerError(error.stack)
 })
 
-export const ok = (data: unknown): HttpResponse =>({
+export const ok = (data: any): HttpResponse =>({
   statusCode:200,
   body: data
 })
