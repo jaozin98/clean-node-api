@@ -1,9 +1,8 @@
 // eslint-disable-next-line max-classes-per-file
 import { LoginController } from "./login"
 import { badRequest, serverError, unauthorized } from "../../helpers/http-helper"
-import { EmailValidator, HttpRequest } from "../signup/signup-protocols"
+import { EmailValidator, HttpRequest, Authentication } from "./login-protocols"
 import { InvalidParamError, MissingParamError } from "../../errors"
-import { Authentication } from "../../../domain/usecases/authentication"
 
 
 const makeEmailValidator = (): EmailValidator  => {
