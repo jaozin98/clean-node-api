@@ -1,6 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
 import { LoginController } from "./login"
-import { badRequest, serverError, unauthorized } from "../../helpers/http-helper"
+import { badRequest, serverError, unauthorized, ok } from "../../helpers/http-helper"
 import { EmailValidator, HttpRequest, Authentication } from "./login-protocols"
 import { InvalidParamError, MissingParamError } from "../../errors"
 
@@ -110,4 +110,11 @@ describe('login controller', () => {
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
   })
+
+  test('Should return 200 if valid credential are provided', async () => {
+    const {sut } = makeSut()
+    const httpResponse = await sut.handle(makeFakeRequest())
+    expect(httpResponse).toEqual(ok({ accessToken: 'any_token' }))
+  })
+
 })
