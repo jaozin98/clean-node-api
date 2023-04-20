@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681994215654" clover="3.2.0">
-  <project timestamp="1681994215654" name="All files">
-    <metrics statements="366" coveredstatements="299" conditionals="69" coveredconditionals="55" methods="45" coveredmethods="31" elements="480" coveredelements="385" complexity="0" loc="366" ncloc="366" packages="15" files="32" classes="32"/>
+<coverage generated="1681997930058" clover="3.2.0">
+  <project timestamp="1681997930058" name="All files">
+    <metrics statements="370" coveredstatements="303" conditionals="69" coveredconditionals="55" methods="45" coveredmethods="31" elements="484" coveredelements="389" complexity="0" loc="370" ncloc="370" packages="15" files="33" classes="33"/>
     <package name="data.protocols">
       <metrics statements="13" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="add-account-repository.ts" path="/home/joaozi/projects/curso-node-api/src/data/protocols/add-account-repository.ts">
@@ -357,7 +357,7 @@
       </file>
     </package>
     <package name="presentation.helpers.validators">
-      <metrics statements="83" coveredstatements="83" conditionals="15" coveredconditionals="15" methods="8" coveredmethods="8"/>
+      <metrics statements="87" coveredstatements="87" conditionals="15" coveredconditionals="15" methods="8" coveredmethods="8"/>
       <file name="compare-fields-validation.ts" path="/home/joaozi/projects/curso-node-api/src/presentation/helpers/validators/compare-fields-validation.ts">
         <metrics statements="22" coveredstatements="22" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -408,6 +408,13 @@
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/joaozi/projects/curso-node-api/src/presentation/helpers/validators/index.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
       </file>
       <file name="required-field-validation.ts" path="/home/joaozi/projects/curso-node-api/src/presentation/helpers/validators/required-field-validation.ts">
         <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
