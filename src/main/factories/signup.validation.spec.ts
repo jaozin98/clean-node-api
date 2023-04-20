@@ -19,6 +19,7 @@ const makeEmailValidator = (): EmailValidator =>{
 }
 
 describe('SignUpValidation Factory', ()  => {
+  // Chamar ValidationComposite com todas as validações
   test ('Shold call ValidationComposite with all validatations', () => {
     makeSingUpValidation()
     const validations: Validation[] = []

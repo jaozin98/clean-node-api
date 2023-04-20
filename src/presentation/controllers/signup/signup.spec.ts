@@ -58,7 +58,7 @@ const makeSut = (): SutTypes =>{
   }
 }
 describe('Email Validation', () => {
-
+ // Deve retornar 500 se AddAccount lançar
   test('Should return 500 if AddAccount throws', async() => {
     const { sut, addAccountStub } = makeSut()
     jest.spyOn(addAccountStub, 'add').mockImplementationOnce(() =>{
@@ -67,7 +67,7 @@ describe('Email Validation', () => {
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(serverError(new ServerError(null)))
   })
-
+ //  Deve chamar AddAcount com valores corretos
   test('Should call AddAcount with correct values', async() =>{
     const { sut, addAccountStub } = makeSut()
     const addSpy= jest.spyOn(addAccountStub, 'add')
@@ -79,14 +79,14 @@ describe('Email Validation', () => {
 
     })
   })
-
+ // Deve retornar 200 se dados válidos forem fornecidos
   test('Should return 200 if valid data is provided', async() => {
       const { sut } = makeSut()
       const httpResponse = await sut.handle(makeFakeRequest())
       expect(httpResponse).toEqual(ok(makeFakeAccount()))
 
  })
-
+ // Deve chamar Validação com valores corretos
  test('Should call Validation with correct values', async() =>{
   const { sut, validationStub } = makeSut()
   const validateSpy= jest.spyOn(validationStub, 'validate')
@@ -94,7 +94,7 @@ describe('Email Validation', () => {
   await sut.handle(httpRequest)
   expect(validateSpy).toHaveBeenCalledWith(httpRequest.body)
  })
-
+ // Deve retornar 400 se a validação retornar um erro
 test('Should return 400 if Validation returns an error', async() => {
   const { sut, validationStub } = makeSut()
   jest.spyOn(validationStub, 'validate').mockReturnValueOnce(new MissingParamError('any_field'))

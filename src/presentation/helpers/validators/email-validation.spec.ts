@@ -34,14 +34,14 @@ const makeSut = (): SutTypes =>{
       const error  = sut.validate({ email: 'any_email@gmail.com' })
       expect(error).toEqual(new InvalidParamError('email'))
     } )
-
+    // Deve ligar para o EmailValidator com o email correto
     test('Should call EmailValidator with correct email', () => {
       const { sut, emailValidatorStub } = makeSut()
       const isValidSpy = jest.spyOn(emailValidatorStub, 'isValid')
       sut.validate({ email: 'any_email@mail.com'})
       expect(isValidSpy).toHaveBeenCalledWith('any_email@mail.com')
     })
-
+    // Deve lançar se um e-mail inválido for fornecido
     test('Should throw if an invalid email is provided', () => {
       const { sut, emailValidatorStub } = makeSut()
       jest.spyOn(emailValidatorStub, 'isValid').mockImplementationOnce(() =>{
