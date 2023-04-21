@@ -55,4 +55,11 @@ describe ('Dbauthentication UseCase', () => {
     const promise = sut.auth(makeAuthentication())
     await expect(promise).rejects.toThrow()
   })
+
+  test('Should return LoadAccontByEmailRepository returns null', async () => {
+    const { sut, loadAccontByEmailRepositoryStub }= makeSut()
+    jest.spyOn(loadAccontByEmailRepositoryStub, 'load').mockReturnValueOnce(null)
+    const accessToken = await sut.auth(makeAuthentication())
+    expect(accessToken).toBeNull()
+  })
 })
