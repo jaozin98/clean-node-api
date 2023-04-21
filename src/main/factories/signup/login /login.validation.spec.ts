@@ -1,9 +1,8 @@
 /* eslint-disable no-restricted-syntax */
-import { makeLoginValidation } from "./login-validation"
 import { ValidationComposite, RequiredFieldValidation, EmailValidation } from "../../../../presentation/helpers/validators"
 import { Validation } from "../../../../presentation/protocols/validation"
 import { EmailValidator } from "../../../../presentation/protocols/email-validator"
-
+import { makeLoginValidation } from "./login-validation"
 
 jest.mock('../../../../presentation/helpers/validators/validation-composite')
 
