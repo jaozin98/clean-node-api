@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682358121249" clover="3.2.0">
-  <project timestamp="1682358121250" name="All files">
+<coverage generated="1682360653425" clover="3.2.0">
+  <project timestamp="1682360653425" name="All files">
     <metrics statements="442" coveredstatements="349" conditionals="83" coveredconditionals="64" methods="52" coveredmethods="33" elements="577" coveredelements="446" complexity="0" loc="442" ncloc="442" packages="17" files="39" classes="39"/>
     <package name="data.protocols.criptography">
       <metrics statements="9" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="encrypter.ts" path="/home/joaozi/projects/curso-node-api/src/data/protocols/criptography/encrypter.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
       <file name="hash-comparer.ts" path="/home/joaozi/projects/curso-node-api/src/data/protocols/criptography/hash-comparer.ts">
         <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
@@ -11,12 +17,6 @@
         <line num="3" count="0" type="stmt"/>
       </file>
       <file name="hasher.ts" path="/home/joaozi/projects/curso-node-api/src/data/protocols/criptography/hasher.ts">
-        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-      </file>
-      <file name="token-generator.ts" path="/home/joaozi/projects/curso-node-api/src/data/protocols/criptography/token-generator.ts">
         <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
