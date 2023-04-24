@@ -1,11 +1,13 @@
 /* eslint-disable max-classes-per-file */
-import { AccountModel } from "../../../domain/models/account"
-import { AuthenticationModel } from "../../../domain/usecases/authentication"
-import { LoadAccontByEmailRepository } from "../../protocols/db/load-account-by-email-repository"
 import { DbAuthentication } from "./db-authentication"
-import { HashComparer } from "../../protocols/criptography/hash-comparer"
-import { TokenGenerator } from "../../protocols/criptography/token-generator"
-import { UpdateAccessTokenRepository } from "../../protocols/db/update-access-token-repository"
+import {
+AccountModel,
+AuthenticationModel,
+LoadAccontByEmailRepository,
+HashComparer,
+TokenGenerator,
+UpdateAccessTokenRepository
+ } from './db-authentication-protocols'
 
 const makeFakeAccount = (): AccountModel => ({
 
@@ -151,4 +153,10 @@ describe ('Dbauthentication UseCase', () => {
     await sut.auth(makeFakeAuthentication())
     expect(updateSpy).toHaveBeenCalledWith('any_id', 'any_token')
    })
+   test('Should throw if HashComparer throws', async () => {
+    const { sut, updateAccessTokenRepositoryStub }= makeSut()
+    jest.spyOn(updateAccessTokenRepositoryStub, 'update').mockReturnValueOnce(new Promise((_resolve, reject) => reject (new Error())))
+    const promise = sut.auth(makeFakeAuthentication())
+    await expect(promise).rejects.toThrow()
+  })
 })
