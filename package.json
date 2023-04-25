@@ -50,6 +50,7 @@
     "fast-glob": "^3.2.12",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.2.0",
+    "ts-node": "^10.9.1",
     "validator": "^13.9.0"
   }
 }
