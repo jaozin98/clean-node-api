@@ -1,43 +1,31 @@
-import {
-  Authentication,
-  AuthenticationModel,
-  LoadAccontByEmailRepository,
-  HashComparer,
-  Encrypter,
-  UpdateAccessTokenRepository
-   } from './db-authentication-protocols'
+import { Authentication, AuthenticationModel, LoadAccontByEmailRepository, HashComparer, Encrypter, UpdateAccessTokenRepository } from './db-authentication-protocols';
 
 export class DbAuthentication implements Authentication {
-  private readonly loadAccountByEmailRepository: LoadAccontByEmailRepository
+  private readonly loadAccountByEmailRepository: LoadAccontByEmailRepository;
 
-  private readonly hashComparer: HashComparer
+  private readonly hashComparer: HashComparer;
 
-  private readonly encrypter: Encrypter
+  private readonly encrypter: Encrypter;
 
-  private readonly updateAccessTokenRepository: UpdateAccessTokenRepository
+  private readonly updateAccessTokenRepository: UpdateAccessTokenRepository;
 
-  constructor (loadAccountByEmailRepository: LoadAccontByEmailRepository,
-    hashComparer: HashComparer,
-    encrypter: Encrypter,
-    updateAccessTokenRepository: UpdateAccessTokenRepository
-    ){
-
-    this.loadAccountByEmailRepository = loadAccountByEmailRepository
-    this.hashComparer = hashComparer
-    this.encrypter = encrypter
-    this.updateAccessTokenRepository = updateAccessTokenRepository
+  constructor(loadAccountByEmailRepository: LoadAccontByEmailRepository, hashComparer: HashComparer, encrypter: Encrypter, updateAccessTokenRepository: UpdateAccessTokenRepository) {
+    this.loadAccountByEmailRepository = loadAccountByEmailRepository;
+    this.hashComparer = hashComparer;
+    this.encrypter = encrypter;
+    this.updateAccessTokenRepository = updateAccessTokenRepository;
   }
 
-  async auth (authentication: AuthenticationModel): Promise<string>{
-    const account = await this.loadAccountByEmailRepository.load(authentication.email)
-    if (account){
-   const isValid = await this.hashComparer.compare(authentication.password, account.password )
-   if (isValid){
-    const accessToken = await this.encrypter.encrypt(account.id)
-    await this.updateAccessTokenRepository.update(account.id, accessToken)
-   return accessToken
-     }
-   }
-    return null
+  async auth(authentication: AuthenticationModel): Promise<string> {
+    const account = await this.loadAccountByEmailRepository.loadByEmail(authentication.email);
+    if (account) {
+      const isValid = await this.hashComparer.compare(authentication.password, account.password);
+      if (isValid) {
+        const accessToken = await this.encrypter.encrypt(account.id);
+        await this.updateAccessTokenRepository.updateAccessToken(account.id, accessToken);
+        return accessToken;
+      }
+    }
+    return null;
   }
 }
