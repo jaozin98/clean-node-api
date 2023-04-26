@@ -1,6 +1,6 @@
 // tipo de conteudo
 import request from 'supertest';
-import app from '../app';
+import app from '../config/app';
 
 describe('Content-Type Middleware', () => {
   // Deve retornar o tipo de conteúdo padrão como JSON
