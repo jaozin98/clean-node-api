@@ -65,7 +65,7 @@ describe('Accopunt Mongo Repository', () => {
     const fakeAccount = await accountCollection.findOne({ _id: id });
     expect(fakeAccount.accessToken).toBeFalsy();
     // eslint-disable-next-line no-underscore-dangle
-    await sut.updateAccessToken(fakeAccount._id, 'any_token');
+    await sut.updateAccessToken(fakeAccount._id.toString(), 'any_token');
     // eslint-disable-next-line no-underscore-dangle
     const account = await accountCollection.findOne({ _id: fakeAccount._id });
     expect(account).toBeTruthy();
