@@ -17,7 +17,7 @@ describe('Log Mongo Repository', () => {
     errorCollection = await MongoHelper.getCollection('errors');
     await errorCollection.deleteMany({});
   });
-
+  // Deve criar um log de erro com sucesso'
   test('Shold create en error log on sucess', async () => {
     const sut = new LogMongoRepository();
     await sut.logError('any_error');

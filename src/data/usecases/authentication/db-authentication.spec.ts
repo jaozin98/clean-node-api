@@ -112,32 +112,34 @@ describe('Dbauthentication UseCase', () => {
     const accessToken = await sut.auth(makeFakeAuthentication());
     expect(accessToken).toBeNull();
   });
-
+  // Deve chamar EncrypterStub com id correto
   test('Should call EncrypterStub with corret id', async () => {
     const { sut, encrypterStub } = makeSut();
     const encryptSpy = jest.spyOn(encrypterStub, 'encrypt');
     await sut.auth(makeFakeAuthentication());
     expect(encryptSpy).toHaveBeenCalledWith('any_id');
   });
-
+  // Deve lançar se EncrypterStub lançar
   test('Should throw if EncrypterStub throws', async () => {
     const { sut, encrypterStub } = makeSut();
     jest.spyOn(encrypterStub, 'encrypt').mockReturnValueOnce(new Promise((_resolve, reject) => reject(new Error())));
     const promise = sut.auth(makeFakeAuthentication());
     await expect(promise).rejects.toThrow();
   });
-
+  // Deve retornar um sucesso simbólico
   test('Shold return a token success', async () => {
     const { sut } = makeSut();
     const accessToken = await sut.auth(makeFakeAuthentication());
     expect(accessToken).toBe('any_token');
   });
+  // Deve chamar UpdateAccessTokenRepository com valores corretos
   test('Should call UpdateAccessTokenRepository with correct values', async () => {
     const { sut, updateAccessTokenRepositoryStub } = makeSut();
     const updateSpy = jest.spyOn(updateAccessTokenRepositoryStub, 'updateAccessToken');
     await sut.auth(makeFakeAuthentication());
     expect(updateSpy).toHaveBeenCalledWith('any_id', 'any_token');
   });
+  // Deve lançar se HashComparer lançar
   test('Should throw if HashComparer throws', async () => {
     const { sut, updateAccessTokenRepositoryStub } = makeSut();
     jest.spyOn(updateAccessTokenRepositoryStub, 'updateAccessToken').mockReturnValueOnce(new Promise((_resolve, reject) => reject(new Error())));

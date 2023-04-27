@@ -20,10 +20,10 @@ describe('SignUpValidation Factory', () => {
     makeSingUpValidation();
     const validations: Validation[] = [];
     // eslint-disable-next-line no-restricted-syntax
-    for (const field of ['nome', 'email', 'password', 'passwordConfirmation']) {
+    for (const field of ['name', 'email', 'password', 'passwordConfirmation']) {
       validations.push(new RequiredFieldValidation(field));
     }
-    validations.push(new CompareFieldsValidation('password', 'passwordConfrimation;'));
+    validations.push(new CompareFieldsValidation('password', 'passwordConfirmation'));
     validations.push(new EmailValidation('email', makeEmailValidator()));
     expect(ValidationComposite).toHaveBeenCalledWith(validations);
   });

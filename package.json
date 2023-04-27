@@ -1,10 +1,14 @@
 {
   "name": "curso-novo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "sucrase-node src/main/server.ts",
+    "start": "node dist/main/server.js",
+    "build": "rimraf dist && tsc",
+    "debug": "node --inspect+0.0.0.0:9222 --nolazy dist/main/server.js",
+    "up": "npm rum build && docker-compose up -d",
+    "down": "docker-compose down",
     "prepare": "husky install",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
@@ -39,7 +43,7 @@
     "jest": "^29.5.0",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.6",
-    "sucrase": "^3.32.0",
+    "rimraf": "^5.0.0",
     "supertest": "^6.3.3",
     "ts-jest": "^29.0.5",
     "typescript": "^5.0.2"
