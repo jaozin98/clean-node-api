@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682604432830" clover="3.2.0">
-  <project timestamp="1682604432830" name="All files">
-    <metrics statements="254" coveredstatements="227" conditionals="52" coveredconditionals="45" methods="31" coveredmethods="24" elements="337" coveredelements="296" complexity="0" loc="254" ncloc="254" packages="13" files="19" classes="19"/>
+<coverage generated="1682618393178" clover="3.2.0">
+  <project timestamp="1682618393178" name="All files">
+    <metrics statements="449" coveredstatements="358" conditionals="92" coveredconditionals="73" methods="56" coveredmethods="37" elements="597" coveredelements="468" complexity="0" loc="449" ncloc="449" packages="18" files="39" classes="39"/>
+    <package name="data.protocols.criptography">
+      <metrics statements="9" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="encrypter.ts" path="/home/gabriel/projects/clean-node-api/src/data/protocols/criptography/encrypter.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+      <file name="hash-comparer.ts" path="/home/gabriel/projects/clean-node-api/src/data/protocols/criptography/hash-comparer.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+      <file name="hasher.ts" path="/home/gabriel/projects/clean-node-api/src/data/protocols/criptography/hasher.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="data.protocols.db.acount">
+      <metrics statements="14" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="add-account-repository.ts" path="/home/gabriel/projects/clean-node-api/src/data/protocols/db/acount/add-account-repository.ts">
+        <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="load-account-by-email-repository.ts" path="/home/gabriel/projects/clean-node-api/src/data/protocols/db/acount/load-account-by-email-repository.ts">
+        <metrics statements="5" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="update-access-token-repository.ts" path="/home/gabriel/projects/clean-node-api/src/data/protocols/db/acount/update-access-token-repository.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
     <package name="data.protocols.db.log">
       <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="log-error-repository.ts" path="/home/gabriel/projects/clean-node-api/src/data/protocols/db/log/log-error-repository.ts">
@@ -9,6 +56,38 @@
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="data.usecases.add-account">
+      <metrics statements="23" coveredstatements="19" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="2"/>
+      <file name="db-add-account-protocols.ts" path="/home/gabriel/projects/clean-node-api/src/data/usecases/add-account/db-add-account-protocols.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="db-add-account.ts" path="/home/gabriel/projects/clean-node-api/src/data/usecases/add-account/db-add-account.ts">
+        <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
     </package>
     <package name="data.usecases.authentication">
@@ -67,6 +146,34 @@
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="domain.usecases">
+      <metrics statements="19" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="add-account.ts" path="/home/gabriel/projects/clean-node-api/src/domain/usecases/add-account.ts">
+        <metrics statements="11" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+      </file>
+      <file name="authentication.ts" path="/home/gabriel/projects/clean-node-api/src/domain/usecases/authentication.ts">
+        <metrics statements="8" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
       </file>
     </package>
     <package name="infra.criptography.bcrypt-adapter">
@@ -211,6 +318,51 @@
         <line num="16" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="presentation.controllers.login ">
+      <metrics statements="36" coveredstatements="33" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="2"/>
+      <file name="login-controller..ts" path="/home/gabriel/projects/clean-node-api/src/presentation/controllers/login /login-controller..ts">
+        <metrics statements="33" coveredstatements="33" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="25" count="8" type="cond" truecount="3" falsecount="0"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="8" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+      <file name="login-protocols-controller.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/controllers/login /login-protocols-controller.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
     <package name="presentation.controllers.signup">
       <metrics statements="30" coveredstatements="26" conditionals="7" coveredconditionals="6" methods="3" coveredmethods="2"/>
       <file name="signup-protocols.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/controllers/signup/signup-protocols.ts">
@@ -251,7 +403,7 @@
       </file>
     </package>
     <package name="presentation.errors">
-      <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="28" coveredstatements="28" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
       <file name="index.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/index.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -266,6 +418,33 @@
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
         <line num="5" count="4" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="missing-param-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/missing-param-error.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="server-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/server-error.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="unauthorized-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/unauthorized-error.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
       </file>
     </package>
@@ -300,7 +479,7 @@
       </file>
     </package>
     <package name="presentation.helpers.validators">
-      <metrics statements="24" coveredstatements="24" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <metrics statements="85" coveredstatements="85" conditionals="17" coveredconditionals="17" methods="8" coveredmethods="8"/>
       <file name="compare-fields-validation.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/helpers/validators/compare-fields-validation.ts">
         <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -324,6 +503,32 @@
         <line num="19" count="2" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
       </file>
+      <file name="email-validation.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/helpers/validators/email-validation.ts">
+        <metrics statements="23" coveredstatements="23" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="17" type="stmt"/>
+        <line num="12" count="17" type="stmt"/>
+        <line num="13" count="17" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
       <file name="index.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/helpers/validators/index.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -331,14 +536,79 @@
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
       </file>
+      <file name="required-field-validation.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/helpers/validators/required-field-validation.ts">
+        <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="44" type="stmt"/>
+        <line num="9" count="44" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+      <file name="validation-composite.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/helpers/validators/validation-composite.ts">
+        <metrics statements="20" coveredstatements="20" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="13" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="17" type="stmt"/>
+        <line num="15" count="17" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
     </package>
     <package name="presentation.protocols">
-      <metrics statements="8" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="23" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="controller.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/protocols/controller.ts">
+        <metrics statements="5" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
       <file name="email-validator.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/protocols/email-validator.ts">
         <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
+      </file>
+      <file name="http.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/protocols/http.ts">
+        <metrics statements="10" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/protocols/index.ts">
         <metrics statements="2" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
