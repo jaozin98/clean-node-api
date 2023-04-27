@@ -121,4 +121,11 @@ describe('Email Validation', () => {
       password: 'any_password',
     });
   });
+  // Deve retornar 500 lançamentos de autenticação
+  test('Should return 500 Authentication throws ', async () => {
+    const { sut, authenticationStub } = makeSut();
+    jest.spyOn(authenticationStub, 'auth').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())));
+    const httpResponse = await sut.handle(makeFakeRequest());
+    expect(httpResponse).toEqual(serverError(new Error()));
+  });
 });
