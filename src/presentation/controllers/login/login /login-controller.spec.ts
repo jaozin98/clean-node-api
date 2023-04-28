@@ -1,8 +1,8 @@
 // eslint-disable-next-line max-classes-per-file
 import { LoginController } from './login-controller.';
-import { badRequest, serverError, unauthorized, ok } from '../../helpers/http/http-helper';
+import { badRequest, serverError, unauthorized, ok } from '../../../helpers/http/http-helper';
 import { HttpRequest, Authentication, Validation, AuthenticationModel } from './login-protocols-controller';
-import { MissingParamError } from '../../errors';
+import { MissingParamError } from '../../../errors';
 
 const makeAuthentication = (): Authentication => {
   class AuthenticationStub implements Authentication {
