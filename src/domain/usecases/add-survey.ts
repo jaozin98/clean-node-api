@@ -1,8 +1,8 @@
 export interface AddSurveyModel {
   questions: string;
-  answers: Surveyanswer[];
+  answers: SurveyAnswer[];
 }
-export interface Surveyanswer {
+export interface SurveyAnswer {
   image: string;
   answers: string;
 }
