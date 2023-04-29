@@ -1,6 +1,7 @@
 // eslint-disable-next-line max-classes-per-file
 import { HttpRequest, Validation } from './add-survey-controller-protocols';
 import { AddSurveyController } from './add-survey-controller';
+import { badRequest } from '../../../helpers/http/http-helper';
 
 const makeFakeRequest = (): HttpRequest => ({
   body: {
@@ -44,5 +45,12 @@ describe('AddSurvey controller', () => {
     const httpRequest = makeFakeRequest();
     await sut.handle(httpRequest);
     expect(validateSpy).toHaveBeenCalledWith(httpRequest.body);
+  });
+
+  test('Shold return 400 if validations fails', async () => {
+    const { sut, validationStub } = makeSut();
+    jest.spyOn(validationStub, 'validate').mockReturnValueOnce(new Error());
+    const HttpResponse = await sut.handle(makeFakeRequest());
+    expect(HttpResponse).toEqual(badRequest(new Error()));
   });
 });
