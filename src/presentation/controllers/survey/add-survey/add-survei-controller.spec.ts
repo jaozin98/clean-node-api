@@ -1,5 +1,5 @@
 // eslint-disable-next-line max-classes-per-file
-import { HttpRequest, Validation } from './add-survey-controller-protocols';
+import { HttpRequest, Validation, AddSurvey, AddSurveyModel } from './add-survey-controller-protocols';
 import { AddSurveyController } from './add-survey-controller';
 import { badRequest } from '../../../helpers/http/http-helper';
 
@@ -24,17 +24,29 @@ const makeValidation = (): Validation => {
   return new ValidationStub();
 };
 
+const makeAddSurvey = (): AddSurvey => {
+  class AddSurveyStub implements AddSurvey {
+    async add(_data: AddSurveyModel): Promise<void> {
+      return new Promise((resolve) => resolve());
+    }
+  }
+  return new AddSurveyStub();
+};
+
 interface SutTypes {
   sut: AddSurveyController;
   validationStub: Validation;
+  addSurveyStub: AddSurvey;
 }
 
 const makeSut = (): SutTypes => {
   const validationStub = makeValidation();
-  const sut = new AddSurveyController(validationStub);
+  const addSurveyStub = makeAddSurvey();
+  const sut = new AddSurveyController(validationStub, addSurveyStub);
   return {
     sut,
     validationStub,
+    addSurveyStub,
   };
 };
 
@@ -52,5 +64,13 @@ describe('AddSurvey controller', () => {
     jest.spyOn(validationStub, 'validate').mockReturnValueOnce(new Error());
     const HttpResponse = await sut.handle(makeFakeRequest());
     expect(HttpResponse).toEqual(badRequest(new Error()));
+  });
+
+  test('Shold call AddSurvey with correc values', async () => {
+    const { sut, addSurveyStub } = makeSut();
+    const addSpy = jest.spyOn(addSurveyStub, 'add');
+    const httpRequest = makeFakeRequest();
+    await sut.handle(httpRequest);
+    expect(addSpy).toHaveBeenCalledWith(httpRequest.body);
   });
 });
