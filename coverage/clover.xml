@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683050337595" clover="3.2.0">
-  <project timestamp="1683050337595" name="All files">
-    <metrics statements="207" coveredstatements="182" conditionals="24" coveredconditionals="24" methods="49" coveredmethods="49" elements="280" coveredelements="255" complexity="0" loc="207" ncloc="207" packages="18" files="34" classes="34"/>
+<coverage generated="1683050798019" clover="3.2.0">
+  <project timestamp="1683050798019" name="All files">
+    <metrics statements="209" coveredstatements="184" conditionals="25" coveredconditionals="25" methods="49" coveredmethods="49" elements="283" coveredelements="258" complexity="0" loc="209" ncloc="209" packages="18" files="34" classes="34"/>
     <package name="data.usecases.add- survey">
       <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="db-add-servey-protocols.ts" path="/home/gabriel/projects/clean-node-api/src/data/usecases/add- survey/db-add-servey-protocols.ts">
@@ -234,8 +234,8 @@
       <file name="access-denied-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/access-denied-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="18" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
       <file name="email-in-use-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/email-in-use-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -287,22 +287,24 @@
         <line num="8" count="11" type="stmt"/>
         <line num="12" count="11" type="stmt"/>
         <line num="17" count="11" type="stmt"/>
-        <line num="22" count="14" type="stmt"/>
+        <line num="22" count="17" type="stmt"/>
         <line num="27" count="11" type="stmt"/>
       </file>
     </package>
     <package name="presentation.middlewares">
-      <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
       <file name="auth-middleware.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/middlewares/auth-middleware.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="10" count="3" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="10" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
       </file>
     </package>
     <package name="presentation.protocols">
