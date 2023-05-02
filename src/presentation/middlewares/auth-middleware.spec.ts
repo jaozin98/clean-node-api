@@ -33,9 +33,9 @@ const makeLoadAccountByToken = (): LoadAccountByToken => {
   return new LoadAccountByTokenStub();
 };
 
-const makeSut = (): SutTypes => {
+const makeSut = (role?: string): SutTypes => {
   const loadAccountByTokenStub = makeLoadAccountByToken();
-  const sut = new AuthMiddleware(loadAccountByTokenStub);
+  const sut = new AuthMiddleware(loadAccountByTokenStub, role);
   return {
     sut,
     loadAccountByTokenStub,
@@ -45,16 +45,16 @@ const makeSut = (): SutTypes => {
 describe('Auth Middleware', () => {
   test('Shold return 403 if x-access-token exists in headers', async () => {
     const { sut } = makeSut();
-
     const httpResponse = await sut.handle({});
     expect(httpResponse).toEqual(forbidden(new AccessDeniedError()));
   });
 
   test('Shold call LoadAccountByToken with correct accesstoken', async () => {
-    const { sut, loadAccountByTokenStub } = makeSut();
+    const role = 'any_role';
+    const { sut, loadAccountByTokenStub } = makeSut(role);
     const loadSpy = jest.spyOn(loadAccountByTokenStub, 'load');
     await sut.handle(makeFakeRequest());
-    expect(loadSpy).toHaveBeenCalledWith('any_token');
+    expect(loadSpy).toHaveBeenCalledWith('any_token', role);
   });
 
   test('Shold return 403 if LoadAccountByToken returns null', async () => {
