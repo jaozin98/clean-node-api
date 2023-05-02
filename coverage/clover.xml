@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683055761868" clover="3.2.0">
-  <project timestamp="1683055761868" name="All files">
+<coverage generated="1683056091430" clover="3.2.0">
+  <project timestamp="1683056091430" name="All files">
     <metrics statements="218" coveredstatements="190" conditionals="25" coveredconditionals="25" methods="51" coveredmethods="51" elements="294" coveredelements="266" complexity="0" loc="218" ncloc="218" packages="19" files="36" classes="36"/>
     <package name="data.usecases.add- survey">
       <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -71,9 +71,9 @@
       <file name="db-load-account-by-token.ts" path="/home/gabriel/projects/clean-node-api/src/data/usecases/load-account-by-token/db-load-account-by-token.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
       </file>
     </package>
     <package name="infra.criptography.bcrypt-adapter">
