@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683137265487" clover="3.2.0">
-  <project timestamp="1683137265487" name="All files">
-    <metrics statements="228" coveredstatements="200" conditionals="29" coveredconditionals="29" methods="53" coveredmethods="53" elements="310" coveredelements="282" complexity="0" loc="228" ncloc="228" packages="19" files="36" classes="36"/>
+<coverage generated="1683152523520" clover="3.2.0">
+  <project timestamp="1683152523520" name="All files">
+    <metrics statements="238" coveredstatements="207" conditionals="31" coveredconditionals="31" methods="55" coveredmethods="55" elements="324" coveredelements="293" complexity="0" loc="238" ncloc="238" packages="20" files="38" classes="38"/>
     <package name="data.usecases.add- survey">
       <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="db-add-servey-protocols.ts" path="/home/gabriel/projects/clean-node-api/src/data/usecases/add- survey/db-add-servey-protocols.ts">
@@ -249,51 +249,70 @@
         <line num="22" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="presentation.controllers.survey.load-survey">
+      <metrics statements="10" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="load-surveys-controller-protocols.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/controllers/survey/load-survey/load-surveys-controller-protocols.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+      <file name="load-surveys-controller.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/controllers/survey/load-survey/load-surveys-controller.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="presentation.errors">
       <metrics statements="25" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
       <file name="access-denied-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/access-denied-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="18" type="stmt"/>
+        <line num="1" count="19" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
       </file>
       <file name="email-in-use-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/email-in-use-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="18" type="stmt"/>
+        <line num="1" count="19" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/index.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="18" type="stmt"/>
-        <line num="2" count="18" type="stmt"/>
-        <line num="3" count="18" type="stmt"/>
-        <line num="4" count="18" type="stmt"/>
-        <line num="5" count="18" type="stmt"/>
-        <line num="6" count="18" type="stmt"/>
+        <line num="1" count="19" type="stmt"/>
+        <line num="2" count="19" type="stmt"/>
+        <line num="3" count="19" type="stmt"/>
+        <line num="4" count="19" type="stmt"/>
+        <line num="5" count="19" type="stmt"/>
+        <line num="6" count="19" type="stmt"/>
       </file>
       <file name="invalid-param-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/invalid-param-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="18" type="stmt"/>
+        <line num="1" count="19" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
       </file>
       <file name="missing-param-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/missing-param-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="18" type="stmt"/>
+        <line num="1" count="19" type="stmt"/>
         <line num="3" count="9" type="stmt"/>
         <line num="4" count="9" type="stmt"/>
       </file>
       <file name="server-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/server-error.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="18" type="stmt"/>
-        <line num="3" count="12" type="stmt"/>
-        <line num="4" count="12" type="stmt"/>
-        <line num="5" count="12" type="stmt"/>
+        <line num="1" count="19" type="stmt"/>
+        <line num="3" count="14" type="stmt"/>
+        <line num="4" count="14" type="stmt"/>
+        <line num="5" count="14" type="stmt"/>
       </file>
       <file name="unauthorized-error.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/errors/unauthorized-error.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="18" type="stmt"/>
+        <line num="1" count="19" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
         <line num="4" count="3" type="stmt"/>
       </file>
@@ -302,13 +321,13 @@
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
       <file name="http-helper.ts" path="/home/gabriel/projects/clean-node-api/src/presentation/helpers/http/http-helper.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-        <line num="2" count="11" type="stmt"/>
-        <line num="4" count="11" type="stmt"/>
-        <line num="8" count="11" type="stmt"/>
-        <line num="12" count="11" type="stmt"/>
-        <line num="17" count="11" type="stmt"/>
-        <line num="22" count="17" type="stmt"/>
-        <line num="27" count="11" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="17" count="13" type="stmt"/>
+        <line num="22" count="20" type="stmt"/>
+        <line num="27" count="12" type="stmt"/>
       </file>
     </package>
     <package name="presentation.middlewares">
