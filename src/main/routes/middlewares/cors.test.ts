@@ -1,6 +1,6 @@
 // CORS impede que um site mal-intencionado acesse recursos de outro site sem permissão.
 import request from 'supertest';
-import app from '../config/app';
+import app from '../../config/app';
 
 describe('CORS Middleware', () => {
   // Deve habilitar o CORS
