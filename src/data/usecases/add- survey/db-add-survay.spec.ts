@@ -1,4 +1,5 @@
 // eslint-disable-next-line max-classes-per-file
+import MockDate from 'mockdate';
 import { AddSurveyModel, AddSurveyRepository } from './db-add-servey-protocols';
 import { DbAddSurvey } from './db-add-survey';
 
@@ -10,6 +11,7 @@ const makeFakeSurveyData = (): AddSurveyModel => ({
       answer: 'any_answer',
     },
   ],
+  date: new Date(),
 });
 
 const makeAddSurveyRepository = (): AddSurveyRepository => {
@@ -36,6 +38,13 @@ const makeSut = (): SutTypes => {
 };
 
 describe('DbAddSurvey Usecase', () => {
+  beforeAll(() => {
+    MockDate.set(new Date());
+  });
+
+  beforeAll(() => {
+    MockDate.reset();
+  });
   test('Shold call AddSurveyRepository wit correct value', async () => {
     const { sut, addSurveyRepositoryStub } = makeSut();
     const addSpy = jest.spyOn(addSurveyRepositoryStub, 'add');
