@@ -86,9 +86,8 @@ describe('Survey Routes', () => {
     // Deve retornar uma conta com sucesso
     test('Should return 403 on load surveys without accessToken', async () => {
       await request(app).get('/api/serveys');
+      expect(403);
     });
-
-    expect(403);
   });
 
   test('Should return 204 on add survey with valid accessToken', async () => {
