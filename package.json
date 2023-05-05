@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/main/server.js",
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
     "debug": "node -L --watch ./dist --inspect+0.0.0.0:9222 --nolazy ./dist/main/server.js",
     "up": "npm rum build && docker-compose up -d",
     "down": "docker-compose down",
@@ -58,10 +58,14 @@
     "fast-glob": "^3.2.12",
     "fix": "^0.0.6",
     "jsonwebtoken": "^9.0.0",
+    "module-alias": "^2.2.2",
     "mongodb": "^5.2.0",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "update": "^0.7.4",
     "validator": "^13.9.0"
+  },
+  "_moduleAliases": {
+    "@": "dist"
   }
 }

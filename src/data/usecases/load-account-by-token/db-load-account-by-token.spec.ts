@@ -11,11 +11,11 @@ const makeFakeAccount = (): AccountModel => ({
   password: 'valid_id',
 });
 
-interface SutTypes {
+type SutTypes = {
   sut: DbLoadAccountByToken;
   decrypterStub: Decrypter;
   loadAccountByTokenRepositoryStub: LoadAccontByTokenRepository;
-}
+};
 
 const makeDecrypter = (): Decrypter => {
   class DecrypterStub implements Decrypter {

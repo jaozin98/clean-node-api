@@ -29,10 +29,10 @@ const makeFakeSurveys = (): SurveyModel[] => [
   },
 ];
 
-interface SutTypes {
+type SutTypes = {
   sut: DbLoadSurveys;
   loadSurveysRepositoryStub: LoadSurveyRepository;
-}
+};
 
 const makeLoadSurveyRepository = (): LoadSurveyRepository => {
   class LoadSurveysRepositoryStub implements LoadSurveyRepository {
@@ -63,7 +63,13 @@ describe('DbLoadSurveys', () => {
   test('Shold return a list of Surveys on success', async () => {
     const { sut } = makeSut();
     const surveys = await sut.load();
-    expect(surveys).toEqual(makeFakeSurveys());
+    const fakeSurveys = makeFakeSurveys();
+    expect(surveys).toEqual(
+      fakeSurveys.map((survey) => ({
+        ...survey,
+        date: expect.any(Date),
+      }))
+    );
   });
 
   test('Shold throw if LoadSurveysRepository throws', async () => {

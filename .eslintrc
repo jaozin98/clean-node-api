@@ -9,11 +9,13 @@
     "no-promise-executor-return": "off",
     "import/prefer-default-export": "off",
     "class-methods-use-this": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
         "argsIgnorePattern": "^_"
       }
     ]
-  }
+  },
+  "ignorePatterns": ["jest.config.ts"]
 }

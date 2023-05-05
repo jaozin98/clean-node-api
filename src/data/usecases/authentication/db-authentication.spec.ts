@@ -47,13 +47,13 @@ const makeUpdateAccessTokenRepository = (): UpdateAccessTokenRepository => {
   }
   return new UpdateAccessTokenRepositoryStub();
 };
-interface SutTypes {
+type SutTypes = {
   sut: DbAuthentication;
   loadAccontByEmailRepositoryStub: LoadAccontByEmailRepository;
   hashComparerStub: HashComparer;
   encrypterStub: Encrypter;
   updateAccessTokenRepositoryStub: UpdateAccessTokenRepository;
-}
+};
 
 const makeSut = (): SutTypes => {
   const loadAccontByEmailRepositoryStub = makeLoadAccontByEmailRepository();
