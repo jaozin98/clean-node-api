@@ -1,6 +1,5 @@
 import MockDate from 'mockdate';
-import { LoadSurveyByIdRepository } from '../../protocols/db/survey/load-survey-by-id-repository';
-import { SurveyModel } from '../../../domain/models/survey';
+import { LoadSurveyByIdRepository, SurveyModel } from './db-load-survey-by-id-protocols';
 import { DbLoadSurveyById } from './db-load-survey-by-id';
 
 const makeFakeSurvey = (): SurveyModel => ({
@@ -51,5 +50,19 @@ describe('DbAddSurveyById', () => {
     const loadByIdSpy = jest.spyOn(loadSurveyByIdRepositoryStub, 'loadById');
     await sut.loadById('any_id');
     expect(loadByIdSpy).toHaveBeenCalledWith('any_id');
+  });
+
+  test('Shold return  Survey on success', async () => {
+    const { sut } = makeSut();
+    const surveys = await sut.loadById('any_id');
+    const fakeSurveys = makeFakeSurvey();
+    expect(surveys).toEqual(fakeSurveys);
+  });
+
+  test('Shold throw if LoadSurveysRepository throws', async () => {
+    const { sut, loadSurveyByIdRepositoryStub } = makeSut();
+    jest.spyOn(loadSurveyByIdRepositoryStub, 'loadById').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())));
+    const promise = sut.loadById('any_id');
+    await expect(promise).rejects.toThrow();
   });
 });

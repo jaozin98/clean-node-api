@@ -1,8 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
-import { Decrypter } from '../../protocols/criptography/decrypter';
-import { AccountModel } from '../add-account/db-add-account-protocols';
+import { Decrypter, AccountModel, LoadAccontByTokenRepository } from './db-load-account-by-token-protocols';
 import { DbLoadAccountByToken } from './db-load-account-by-token';
-import { LoadAccontByTokenRepository } from '../../protocols/db/acount/load-account-by-token-repository ';
 
 const makeFakeAccount = (): AccountModel => ({
   id: 'valid_id',
