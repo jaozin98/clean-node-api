@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683480556841" clover="3.2.0">
-  <project timestamp="1683480556841" name="All files">
-    <metrics statements="259" coveredstatements="218" conditionals="31" coveredconditionals="31" methods="61" coveredmethods="61" elements="351" coveredelements="310" complexity="0" loc="259" ncloc="259" packages="22" files="43" classes="43"/>
+<coverage generated="1683674489542" clover="3.2.0">
+  <project timestamp="1683674489543" name="All files">
+    <metrics statements="267" coveredstatements="222" conditionals="31" coveredconditionals="31" methods="63" coveredmethods="63" elements="361" coveredelements="316" complexity="0" loc="267" ncloc="267" packages="23" files="45" classes="45"/>
     <package name="data.usecases.add- survey">
       <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="db-add-servey-protocols.ts" path="/home/gabriel/projects/clean-node-api/src/data/usecases/add- survey/db-add-servey-protocols.ts">
@@ -118,6 +118,23 @@
         <line num="4" count="9" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="data.usecases.save-survey-result">
+      <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="db-save-survey-result-protocols.ts" path="/home/gabriel/projects/clean-node-api/src/data/usecases/save-survey-result/db-save-survey-result-protocols.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="db-save-survey-result.ts" path="/home/gabriel/projects/clean-node-api/src/data/usecases/save-survey-result/db-save-survey-result.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
       </file>
     </package>
     <package name="infra.criptography.bcrypt-adapter">

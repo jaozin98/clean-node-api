@@ -1,7 +1,7 @@
 export interface SurveyResultModel {
   id: string;
+  accountId: string;
   surveyId: string;
-  questions: string;
-  answers: string;
+  answer: string;
   date: Date;
 }
